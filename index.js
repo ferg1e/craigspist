@@ -258,7 +258,7 @@ urlCities.sort(() => Math.random() - 0.5);
                 //console.log(`data: ${aTitle}, ${aUrl}, ${aTime}`)
     
                 //
-                const isCurrCity = aUrl.startsWith(`https://${city}.`);
+                const isCurrCity = true;
 
                 if(isCurrCity) {
                     let d = new Date(aTime);
