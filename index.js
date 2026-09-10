@@ -10,11 +10,6 @@ const maxSleep = 12000;
 const categories = ['sof', 'web', 'cpg'];
 let category = 'cpg';
 
-//https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
-
-//const urlCities = ['orangecounty', 'slo', 'sfbay'];
-//const urlCities = ['losangeles'];
-
 const wordsBad = [
     'Turn Your WiFi into',
     'Earn $45/Month',
