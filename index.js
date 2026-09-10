@@ -3,6 +3,7 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 const {urlCities} = require('./cities')
 const {wordsBad} = require('./words-bad')
+const {wordsGood} = require('./words-good')
 var fs = require('fs');
 
 //
@@ -10,36 +11,6 @@ const minSleep = 5000;
 const maxSleep = 12000;
 const categories = ['sof', 'web', 'cpg'];
 let category = 'cpg';
-
-const wordsGood = [
-    'javascript',
-    'react',
-    'developer',
-    'engineer',
-    'code',
-    'script',
-    'software',
-    'programmer',
-    'programer',
-    'angular',
-    'haskell',
-    'lisp',
-    'sql',
-    'python',
-    'ruby',
-    'php',
-    'node',
-    'flutter',
-    'app',
-    'clone',
-    'website',
-    'Technical Co-Founder', 'Technical CoFounder', 'Technical Co Founder',
-    'e-commerce website', 'ecommerce website',
-    'html',
-    'css',
-    'system',
-    'engine',
-];
 
 //
 const clCategory = process.argv[2];
