@@ -170,6 +170,9 @@ urlCities.sort(() => Math.random() - 0.5);
         if(isBad) {
             xStyle = ' style="color:#dddddd;"'
         }
+        else if(isGood) {
+            xStyle = ' style="font-weight:bold;"'
+        }
 
         outHtml += `<tr><td>${v.city}</td><td><a${xStyle} href="${v.url}" target="_blank">${v.title}</a></td><td>${v.time}</td></tr>`;
     }
