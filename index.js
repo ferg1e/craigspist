@@ -171,15 +171,6 @@ urlCities.sort(() => Math.random() - 0.5);
             xStyle = ' style="color:#dddddd;"'
         }
 
-        /*let textColor = '#333333'
-
-        if(isGood) {
-            textColor = '#00bb00'
-        }
-        else if(isBad) {
-            textColor = '#dddddd'
-        }*/
-
         outHtml += `<tr><td>${v.city}</td><td><a${xStyle} href="${v.url}" target="_blank">${v.title}</a></td><td>${v.time}</td></tr>`;
     }
 
