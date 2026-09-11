@@ -1,6 +1,7 @@
 
 //
 const {Builder, By, Key, until} = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome')
 const {urlCities} = require('./cities')
 const {wordsBad} = require('./words-bad')
 const {wordsGood} = require('./words-good')
@@ -33,7 +34,12 @@ urlCities.sort(() => Math.random() - 0.5);
 
 //
 (async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    const options = new chrome.Options()
+
+    options.excludeSwitches('enable-logging')
+    options.addArguments('--log-level=3')
+
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.manage().setTimeouts({implicit: 3000});
 
     const items = [];
