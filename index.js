@@ -1,5 +1,3 @@
-
-//
 const {Builder, By, Key, until} = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome')
 const {urlCities} = require('./cities')
