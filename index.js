@@ -1,15 +1,15 @@
-const {Builder, By, Key, until} = require('selenium-webdriver');
+const {Builder, By, Key, until} = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome')
 const {urlCities} = require('./cities')
 const {wordsBad} = require('./words-bad')
 const {wordsGood} = require('./words-good')
-var fs = require('fs');
+var fs = require('fs')
 
 //
-const minSleep = 5000;
-const maxSleep = 12000;
-const categories = ['sof', 'web', 'cpg'];
-let category = 'cpg';
+const minSleep = 5000
+const maxSleep = 12000
+const categories = ['sof', 'web', 'cpg']
+let category = 'cpg'
 
 //
 const clCategory = process.argv[2];
