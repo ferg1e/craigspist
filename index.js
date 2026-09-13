@@ -67,11 +67,9 @@ urlCities.sort(() => Math.random() - 0.5);
             //await driver.manage().setTimeouts({implicit: 3000});
     
             const lis = await driver.findElements(By.className('result-info'));
-            //console.log(`init len: ${lis.length}`)
     
             for(let i = 0; i < lis.length; ++i) {
                 const tsElem = await lis[i].findElement(By.className('posting-title'));
-                //const tsElem = await lis[i].findElement(By.className('titlestring'));
                 const aTitle = await tsElem.getText();
                 const aUrl = await tsElem.getAttribute('href');
     
@@ -96,7 +94,6 @@ urlCities.sort(() => Math.random() - 0.5);
 
                 if(isCurrCity) {
                     let d = new Date(aTime);
-                    //const isGood = strContainsArray(aTitle, wordsGood);
                     const isGood = true;
         
                     if(isGood) {
