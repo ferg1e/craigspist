@@ -64,8 +64,6 @@ urlCities.sort(() => Math.random() - 0.5);
             //
             await driver.get(pageUrl);
     
-            //await driver.manage().setTimeouts({implicit: 3000});
-    
             const lis = await driver.findElements(By.className('result-info'));
     
             for(let i = 0; i < lis.length; ++i) {
