@@ -12,19 +12,19 @@ const categories = ['sof', 'web', 'cpg']
 let category = 'cpg'
 
 //
-const clCategory = process.argv[2];
+const clCategory = process.argv[2]
 
 if(clCategory != null) {
-    category = clCategory;
+    category = clCategory
 }
 
 //
-const isValidCategory = categories.includes(category);
+const isValidCategory = categories.includes(category)
 
 if(!isValidCategory) {
-    const joinedCats = categories.join(', ');
-    console.log(`category must be one of: ${joinedCats}. Default is cpg.`);
-    process.exit();
+    const joinedCats = categories.join(', ')
+    console.log(`category must be one of: ${joinedCats}. Default is cpg.`)
+    process.exit()
 }
 
 //
