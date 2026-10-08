@@ -89,19 +89,16 @@ urlCities.sort(() => Math.random() - 0.5);
     
                 //
                 let d = new Date(aTime);
-                const isGood = true;
-    
-                if(isGood) {
-                    items.push({
-                        title: aTitle,
-                        url: aUrl,
-                        time: aTime,
-                        timeMilli: d.getTime(),
-                        city: city
-                    });
 
-                    ++adCount;
-                }
+                items.push({
+                    title: aTitle,
+                    url: aUrl,
+                    time: aTime,
+                    timeMilli: d.getTime(),
+                    city: city
+                });
+
+                ++adCount;
             }
         }
         catch(e) {
