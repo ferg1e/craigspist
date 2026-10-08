@@ -41,6 +41,7 @@ urlCities.sort(() => Math.random() - 0.5);
     await driver.manage().setTimeouts({implicit: 3000});
 
     const items = [];
+    const urls = []
     let lastStart = 0;
 
     //
@@ -70,6 +71,14 @@ urlCities.sort(() => Math.random() - 0.5);
                 const tsElem = await lis[i].findElement(By.className('posting-title'));
                 const aTitle = await tsElem.getText();
                 const aUrl = await tsElem.getAttribute('href');
+
+                //
+                if(urls.indexOf(aUrl) === -1) {
+                    urls.push(aUrl)
+                }
+                else {
+                    continue
+                }
     
                 const metaElem = await lis[i].findElement(By.className('meta'));
                 const spans = await metaElem.findElements(By.css('span'));
