@@ -88,23 +88,19 @@ urlCities.sort(() => Math.random() - 0.5);
                 //console.log(`data: ${aTitle}, ${aUrl}, ${aTime}`)
     
                 //
-                const isCurrCity = true;
+                let d = new Date(aTime);
+                const isGood = true;
+    
+                if(isGood) {
+                    items.push({
+                        title: aTitle,
+                        url: aUrl,
+                        time: aTime,
+                        timeMilli: d.getTime(),
+                        city: city
+                    });
 
-                if(isCurrCity) {
-                    let d = new Date(aTime);
-                    const isGood = true;
-        
-                    if(isGood) {
-                        items.push({
-                            title: aTitle,
-                            url: aUrl,
-                            time: aTime,
-                            timeMilli: d.getTime(),
-                            city: city
-                        });
-
-                        ++adCount;
-                    }
+                    ++adCount;
                 }
             }
         }
