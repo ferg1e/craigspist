@@ -2,6 +2,7 @@ import {Builder, By} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import fs from 'fs'
 import {randInt} from './rand-int.js'
+import {strContainsArray} from './str-contains-array.js'
 
 const urlCities = ['losangeles']
 const wordsBad = []
@@ -138,17 +139,3 @@ fs.writeFile(
     outHtml,
     e => {},
 );
-
-//
-function strContainsArray(str, a) {
-    for(let i = 0; i < a.length; ++i) {
-        const needle = a[i].toLowerCase()
-        const isIn = str.toLowerCase().includes(needle)
-
-        if(isIn) {
-            return true
-        }
-    }
-
-    return false
-}
