@@ -88,8 +88,7 @@ for(let k = 0; k < urlCities.length; ++k) {
             const spans = await metaElem.findElements(By.css('span'))
             let aTime = ""
 
-            for(let j = 0; j < spans.length; ++j) {
-                let s = spans[j]
+            for(const s of spans) {
                 const titleAttrValue = await s.getAttribute('title')
 
                 if(titleAttrValue != "") {
