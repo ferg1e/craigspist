@@ -3,8 +3,8 @@ import chrome from 'selenium-webdriver/chrome.js'
 import fs from 'fs'
 import {randInt} from './rand-int.js'
 import {strContainsArray} from './str-contains-array.js'
+import {urlCities} from './cities.js'
 
-const urlCities = ['losangeles']
 const wordsBad = []
 const wordsGood = []
 const minSleep = 5000
