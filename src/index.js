@@ -1,9 +1,30 @@
 import {Builder, By} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import fs from 'fs'
+import {parseArgs} from 'util'
 import {randInt} from './rand-int.js'
 import {strContainsArray} from './str-contains-array.js'
-import {urlCities} from './cities.js'
+
+const cliArgs = parseArgs({
+    options: {
+        cities: {
+            type: 'string',
+            short: 'c',
+            default: 'cities.js'
+        }
+    }
+})
+
+let urlCities = undefined
+
+if(cliArgs.values.cities.endsWith('.js')) {
+    const path = `./${cliArgs.values.cities}`
+    const module = await import(path)
+    urlCities = module.urlCities
+}
+else {
+    urlCities = cliArgs.values.cities.split(',')
+}
 
 const wordsBad = []
 const wordsGood = []
