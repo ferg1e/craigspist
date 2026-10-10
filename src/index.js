@@ -1,6 +1,7 @@
 import {Builder, By} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import fs from 'fs'
+import {randInt} from './rand-int.js'
 
 const urlCities = ['losangeles']
 const wordsBad = []
@@ -137,11 +138,6 @@ fs.writeFile(
     outHtml,
     e => {},
 );
-
-//
-function randInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
 
 //
 function strContainsArray(str, a) {
