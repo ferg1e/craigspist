@@ -12,7 +12,12 @@ const cliArgs = parseArgs({
             type: 'string',
             short: 'c',
             default: 'cities.js'
-        }
+        },
+        category: {
+            type: 'string',
+            short: 'C',
+            default: 'acc'
+        },
     }
 })
 
@@ -31,7 +36,7 @@ const wordsBad = []
 const minSleep = 5000
 const maxSleep = 12000
 //const categories = ['sof', 'web', 'cpg']
-let category = 'cpg'
+let category = cliArgs.values.category
 
 urlCities.sort(() => Math.random() - 0.5)
 
