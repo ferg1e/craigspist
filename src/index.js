@@ -1,6 +1,6 @@
 import {Builder, By} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
-import fs from 'fs'
+import fs from 'fs/promises'
 import {parseArgs} from 'util'
 import {randInt} from './rand-int.js'
 import {strContainsArray} from './str-contains-array.js'
@@ -178,8 +178,4 @@ for(let i = 0; i < items.length; ++i) {
 
 outHtml += '</table>'
 
-fs.writeFile(
-    outFilename,
-    outHtml,
-    e => {},
-);
+await fs.writeFile(outFilename, outHtml)
