@@ -5,6 +5,7 @@ import {parseArgs} from 'util'
 import {randInt} from './rand-int.js'
 import {strContainsArray} from './str-contains-array.js'
 import {wordsGood} from './words-good.js'
+import {wordsBad} from './words-bad.js'
 
 const cliArgs = parseArgs({
     options: {
@@ -32,7 +33,6 @@ else {
     urlCities = cliArgs.values.cities.split(',')
 }
 
-const wordsBad = []
 const minSleep = 5000
 const maxSleep = 12000
 //const categories = ['sof', 'web', 'cpg']
