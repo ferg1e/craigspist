@@ -1,6 +1,7 @@
 import {Builder, By} from 'selenium-webdriver'
 import chrome from 'selenium-webdriver/chrome.js'
 import fs from 'fs/promises'
+import {resolve} from 'path'
 import {parseArgs} from 'util'
 import {randInt} from './rand-int.js'
 import {strContainsArray} from './str-contains-array.js'
@@ -158,7 +159,6 @@ items.sort((a,b) => b.timeMilli - a.timeMilli)
 
 //
 let outHtml = "<table>"
-const outFilename = `./out/${category}` + Date.now() + '.html'
 
 for(let i = 0; i < items.length; ++i) {
     const v = items[i]
@@ -178,4 +178,10 @@ for(let i = 0; i < items.length; ++i) {
 
 outHtml += '</table>'
 
-await fs.writeFile(outFilename, outHtml)
+//
+const outDirPath = resolve(import.meta.dirname, '../out')
+const outFilename = `${category}${Date.now()}.html`
+const outFilePath = resolve(outDirPath, outFilename)
+
+await fs.mkdir(outDirPath, {recursive: true})
+await fs.writeFile(outFilePath, outHtml)
