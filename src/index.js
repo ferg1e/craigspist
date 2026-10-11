@@ -74,12 +74,31 @@ for(let k = 0; k < urlCities.length; ++k) {
         //
         await driver.get(pageUrl)
 
+        //
+        let nearbyElemY = 1444555666
+
+        try {
+            const nearbyElem = await driver.findElement(By.className('nearby-separator'))
+            const rect = await nearbyElem.getRect()
+            nearbyElemY = rect.y
+        }
+        catch(e) {
+            //
+        }
+
+        //
         const lis = await driver.findElements(By.className('result-info'))
 
         for(let i = 0; i < lis.length; ++i) {
             const tsElem = await lis[i].findElement(By.className('posting-title'))
+            const rect = await tsElem.getRect()
             const aTitle = await tsElem.getText()
             const aUrl = await tsElem.getAttribute('href')
+
+            //
+            if(rect.y > nearbyElemY) {
+                break
+            }
 
             //
             if(urls.indexOf(aUrl) === -1) {
