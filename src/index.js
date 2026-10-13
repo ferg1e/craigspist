@@ -23,15 +23,15 @@ const cliArgs = parseArgs({
     }
 })
 
-let urlCities = undefined
+let cities = undefined
 
 if(cliArgs.values.cities.endsWith('.js')) {
     const path = `./${cliArgs.values.cities}`
     const module = await import(path)
-    urlCities = module.urlCities
+    cities = module.cities
 }
 else {
-    urlCities = cliArgs.values.cities.split(',')
+    cities = cliArgs.values.cities.split(',')
 }
 
 const minSleep = 5000
@@ -39,7 +39,7 @@ const maxSleep = 12000
 //const categories = ['sof', 'web', 'cpg']
 let category = cliArgs.values.category
 
-urlCities.sort(() => Math.random() - 0.5)
+cities.sort(() => Math.random() - 0.5)
 
 ////
 const options = new chrome.Options()
@@ -55,8 +55,8 @@ const urls = []
 let lastStart = 0
 
 //
-for(let k = 0; k < urlCities.length; ++k) {
-    const city = urlCities[k]
+for(let k = 0; k < cities.length; ++k) {
+    const city = cities[k]
     const pageUrl = `https://${city}.craigslist.org/search/${category}`
     let adCount = 0
 
@@ -146,7 +146,7 @@ for(let k = 0; k < urlCities.length; ++k) {
     console.log(`${city}: ${adCount}`)
 
     //
-    const isLastCity = k == urlCities.length - 1
+    const isLastCity = k == cities.length - 1
 
     if(!isLastCity) {
         await new Promise(r => setTimeout(r, randInt(minSleep, maxSleep)))

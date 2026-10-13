@@ -1,4 +1,4 @@
-export const urlCities = [
+export const cities = [
     'losangeles',
     'newyork',
     'sandiego',
