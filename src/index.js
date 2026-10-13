@@ -160,8 +160,7 @@ items.sort((a,b) => b.timeMilli - a.timeMilli)
 //
 let outHtml = "<table>"
 
-for(let i = 0; i < items.length; ++i) {
-    const v = items[i]
+for(const v of items) {
     const isGood = strContainsArray(v.title, wordsGood)
     const isBad = strContainsArray(v.title, wordsBad)
     let xStyle = ''
