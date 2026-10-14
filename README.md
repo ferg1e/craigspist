@@ -9,4 +9,8 @@ Craigspist is a craigslist scraper. It works for all jobs categories and all gig
 
 ## Install & Run
 
-...coming soon...
+- `git clone https://github.com/ferg1e/craigspist.git scraper`
+- `cd scraper`
+- `npm install`
+- `node src/index.js -c losangeles -C gov`
+- Now all the Los Angeles jobs from the government category will be in `out/gov1792012446526.html` (the timestamp in the filename will be different)
