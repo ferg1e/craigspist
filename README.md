@@ -17,7 +17,7 @@ Craigspist is a craigslist scraper. It works for all jobs categories and all gig
 
 ## Usage
 
-When you run the scraper via `node src/index.js` a chrome browser window will open, don't touch it. The CLI will print the number of ads for each city as they are scraped. There is a random 5-12 second sleep between scraping each city. Once all cities are scraped then links to all ads will be in an HTML file in the `out` directory. All the ads in the HTML file are in reverse chronological order of CL posting time.
+When you run the scraper via `node src/index.js` a Chrome browser window will open, don't touch it. The CLI will print the number of ads for each city as they are scraped. There is a random 5-12 second sleep between scraping each city. Once all cities are scraped then links to all ads will be in an HTML file in the `out` directory. All the ads in the HTML file are in reverse chronological order of CL posting time.
 
 The scraper supports two CLI args: `--cities` and `--category`.
 
