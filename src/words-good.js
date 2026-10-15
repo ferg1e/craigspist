@@ -1,4 +1,4 @@
-module.exports.wordsGood = [
+export const wordsGood = [
     'javascript',
     'react',
     'developer',

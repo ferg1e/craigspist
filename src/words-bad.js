@@ -1,4 +1,4 @@
-module.exports.wordsBad = [
+export const wordsBad = [
     'Turn Your WiFi into',
     'Earn $45/Month',
     'EASY $52',

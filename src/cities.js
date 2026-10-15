@@ -1,4 +1,4 @@
-module.exports.urlCities = [
+export const cities = [
     'losangeles',
     'newyork',
     'sandiego',
