@@ -21,7 +21,7 @@ When you run the scraper via `node src/index.js` a Chrome browser window will op
 
 The scraper supports two CLI args: `--cities` and `--category`.
 
-`--cities` can either be a .js filename or a comma separated list of cities. If you use a .js file then it must export a `cities` array (see `src/cities.js` for an example) and it must be in the `src` directory. The default value for `--cities` if not specified is `cities.js` which uses `src/cities.js`. `src/cities.js` contains the largest 72 cities in the United States. You can use `-c` as a shortcut for `--cities`.
+`--cities` can either be a .js filename or a comma separated list of cities. If you use a .js filename then it must export a `cities` array (see `src/cities.js` for an example) and it must be in the `src` directory. The default value for `--cities` if not specified is `cities.js` which uses `src/cities.js`. `src/cities.js` contains the largest 72 cities in the United States. You can use `-c` as a shortcut for `--cities`.
 
 `--category` can be a single CL jobs or gigs category. The default is `acc` which is the accounting + finance category. You can use `-C` as a shortcut for `--category`.
 
